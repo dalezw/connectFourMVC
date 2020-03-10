@@ -53,7 +53,7 @@ public class c4Model {
 	}
 	
 	public boolean checkHorizontal() {
-		for(int r=0; r<3;r++) {
+		for(int r=0; r<6;r++) {
 			for(int c=0;c<7;c++) {
 				if(board[r][c] !=0 && board[r][c]==board[r][c+1]
 						&& board[r][c]==board[r][c+2]
@@ -79,14 +79,25 @@ public class c4Model {
 	}
 	
 	public boolean checkDiagonal() {
-		for(int r=0; r<3;r++) {
-			for(int c=0;c<7;c++) {
+		int r=0, c=0;
+		//positive slope
+		for(r=0; r<3;r++) {
+			for(c=0;c<4;c++) {
 				if(board[r][c] !=0 && board[r][c]==board[r+1][c+1]
 						&& board[r][c]==board[r+2][c+2]
-						&&board[r][c] == board[r+3][c+2]) {
+						&&board[r][c] == board[r+3][c+3]) {
 					return true;
 				}
 			}
+			//negative slope 
+			for(r=3; r<6;r++) {
+				for(c=0;c<4;c++) {
+					if(board[r][c] !=0 && board[r][c]==board[r-1][c+1]
+							&& board[r][c]==board[r-2][c+2]
+							&&board[r][c] == board[r-3][c+3]) {
+						return true;
+					}
+				}
 		}
 		return false;
 	}
