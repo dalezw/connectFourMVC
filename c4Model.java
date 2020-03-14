@@ -100,7 +100,7 @@ public class c4Model {
 	public void findOpenSlot(int column) {
 		boolean done=false;
 		
-		while (!done) {
+		while (done==false) {
 			for(int r=6; r>0;r--) {
 				if(board[r][column]==0) {
 					board[r][column]=player;
