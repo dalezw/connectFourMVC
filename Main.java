@@ -1,14 +1,23 @@
+package mvc;
+
 
 public class Main {
 
+c4Model game;
+	
+	public Main() {
+		game=new c4Model();
+	}
+	
 	private int[][] board = new int[6][7];
 	private int turnCounter = 1;
-	private boolean winCondition = false;
+	private boolean winCondition = game.winCondition();
 	private int row, col;
 	private int currentPlayer;
 	
 	
-	while (winCondition == false) {
+
+	while (game.winCondition == false) {
 		if (turnCounter%2 == 0) {
 			currentPlayer = 2;
 		} else {
@@ -18,7 +27,7 @@ public class Main {
 		//set to column
 		
 		if (board[column][7] != 0) {
-			//column filled, try again
+			
 		}
 		
 		for(int i = 0; i < 7; i++) {
@@ -30,7 +39,7 @@ public class Main {
 		}
 		
 		
-		if (checkWin() == true) {  //Not an actual method yet
+		if (winCondition == true) {  
 			winCondition = true;
 		} else if (turnCounter > 42) {  //No more moves can be made and the game results in a Draw
 			winCondition = true;
@@ -38,13 +47,13 @@ public class Main {
 		turnCounter += 1;
 	}
 	
-	if (turnCounter > 42) {
-		//Draw
+	if (turnCounter > 42 || game.winCondition()==true ) {
+		System.out.println("Draw");
 	} else if (turnCounter % 2 == 0) { //If the turnCounter is even then Player 2 won
-		//Player 2 Wins
+		System.out.println("Player 2 Wins");
 	} else {
-		//Player 1 Wins
+		System.out.println("Player 1 Wins");
 	}
-	
+}	
 }
 
