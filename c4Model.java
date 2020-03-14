@@ -53,8 +53,8 @@ public class c4Model {
 	}
 	
 	public boolean checkHorizontal() {
-		for(int r=0; r<6;r++) {
-			for(int c=0;c<7;c++) {
+		for(int r=0; r<4;r++) {
+			for(int c=0;c<6;c++) {
 				if(board[r][c] !=0 && board[r][c]==board[r][c+1]
 						&& board[r][c]==board[r][c+2]
 						&&board[r][c] == board[r][c+3]) {
@@ -94,7 +94,7 @@ public class c4Model {
 				for(c=0;c<4;c++) {
 					if(board[r][c] !=0 && board[r][c]==board[r-1][c+1]
 							&& board[r][c]==board[r-2][c+2]
-							&&board[r][c] == board[r-3][c+3]) {
+							&&board[r][c] == board[r-3][c+3]) 
 						return true;
 					}
 				}
@@ -102,5 +102,10 @@ public class c4Model {
 		return false;
 	}
 	
+	public void insertPiece(String column){
+		
+		
+	}
 	
+
 }
