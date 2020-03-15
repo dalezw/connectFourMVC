@@ -1,13 +1,18 @@
 
 public class Main {
 	
-	c4Model game;
-	private int[][] board = new int[7][6];
-	private int turnCounter = 1;
-	private boolean winCondition  = game.winCondition();
-	private int row, col, userChoice;
-	private int currentPlayer;
-	View view;
+	static c4Model game = new c4Model();
+	static View view = new View();
+	
+	public static void main(String[] args) {
+	
+	
+	 int[][] board = new int[7][6];
+	 int turnCounter = 1;
+	 boolean winCondition  = game.winCondition();
+	 int row, col, userChoice;
+	 int currentPlayer;
+	
 	
 	
 	while (winCondition == false) {
@@ -17,9 +22,9 @@ public class Main {
 			currentPlayer = 1;
 		}
 		
-		userChoice = view.getPlayerMove(currentPlayer);
+		userChoice = view.getPlayerMove(currentPlayer) - 1;
 		
-		if (board[userChoice][6] != 0) {
+		if (board[userChoice][5] != 0) {
 			view.invalidMove();
 		}
 		
@@ -38,6 +43,7 @@ public class Main {
 			winCondition = true;
 		}
 		turnCounter += 1;
+		view.displayBoard(board);
 	}
 	
 	if (turnCounter > 42) {
