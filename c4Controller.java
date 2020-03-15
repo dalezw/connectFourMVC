@@ -9,7 +9,7 @@ public class c4Controller {
 
 		int[][] board = new int[7][6];  //2D array that holds the values of the pieces
 		int turnCounter = 1;
-		boolean winCondition = game.winCondition();
+		boolean winCondition = false;
 		int row, col, userChoice;
 		int currentPlayer;
 
