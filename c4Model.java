@@ -8,7 +8,7 @@
 
 public class c4Model {
 
-	private int[][] board= new int[6][7];// game board
+	private int[][] board= new int[7][6];// game board
 	
 	int player=1;
 	
@@ -98,52 +98,6 @@ public class c4Model {
 		}
 		return false;
 	}
-	
-	//finds open slot for insertion of piece and sets that slot to the current player
-	public void findOpenSlot(int column) {
-		boolean done=false;
-		
-		while (done==false) {
-			for(int r=6; r>0;r--) {
-				if(board[r][column]==0) {
-					board[r][column]=player;
-					done=true;
-				}
-			}
-		}
-	}
-	
-	//takes input of number from player and uses findOpenSlot to input piece in lowest open slot
-	public void insertPiece(String column) {
-		switch(column) {
-		case"1":
-			int column1=0;
-			this.findOpenSlot(column1);
-			break;
-		case"2":
-			int column2=1;
-			this.findOpenSlot(column2);
-			break;
-		case"3":
-			int column3=2;
-			this.findOpenSlot(column3);
-			break;
-		case"4":
-			int column4=3;
-			this.findOpenSlot(column4);
-			break;
-		case"5":
-			int column5=4;
-			this.findOpenSlot(column5);
-			break;
-		case"6":
-			int column6=5;
-			this.findOpenSlot(column6);
-			break;
-		case"7":
-			int column7=6;
-			this.findOpenSlot(column7);
-			break;
-		}
-	}
 }
+	
+	
