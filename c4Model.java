@@ -5,13 +5,16 @@
  * Last Modified: 14 march 2020
  */
 
-package mvc;
 
 public class c4Model {
 
 	private int[][] board= new int[6][7];// game board
 	
 	int player=1;
+	
+	public c4Model () {
+		//constructor
+	}
 	
 	//sets board up with all values of 0 
 	public void setBoard() {	
@@ -143,10 +146,4 @@ public class c4Model {
 			break;
 		}
 	}
-	
-	
-	
-	
-	
-
 }
